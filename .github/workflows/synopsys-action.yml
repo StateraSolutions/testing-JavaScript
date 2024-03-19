@@ -18,8 +18,8 @@ jobs:
           polaris_server_url: ${{ secrets.POLARIS_SERVER_URL }}
           polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
           polaris_assessment_types: "SCA,SAST"
-          polaris_application_name: SIG-HUGO-${{ github.event.repository.name }}
-          polaris_project_name: ${{ github.event.repository.name }}
+          polaris_application_name: { testing-JavaScript }
+          polaris_project_name: { new_user }
           polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' || 'false' }}
           polaris_reports_sarif_create: ${{ github.event_name != 'pull_request' && 'true' || 'false' }}
           polaris_upload_sarif_report: ${{ github.event_name != 'pull_request' && 'true' || 'false' }}
