@@ -24,18 +24,20 @@ jobs:
       - name: Synopsys Action
         uses: synopsys-sig/synopsys-action@v1.6.0
         with:
-          #------------------------------------------COVERITY-----------------------------------------
-          coverity_url: ${{ secrets.COVERITY_URL }}
-          coverity_user: ${{ secrets.COVERITY_USER }}
-          coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
+          # #------------------------------------------COVERITY-----------------------------------------
+          # coverity_url: ${{ secrets.COVERITY_URL }}
+          # coverity_user: ${{ secrets.COVERITY_USER }}
+          # coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
 
-          #------------------------------------------BLACKDUCK----------------------------------------
-          blackduck_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          blackduck_url: ${{ secrets.BLACKDUCK_URL }}
+          # #------------------------------------------BLACKDUCK----------------------------------------
+          # blackduck_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          # blackduck_url: ${{ secrets.BLACKDUCK_URL }}
 
           #------------------------------------------POLARIS------------------------------------------
-          polaris_server_url: ${{ secrets.POLARIS_SERVER_URL }}
-          polaris_access_token: ${{ secrets.POLARIS_ACCESS_TOKEN }}
+          polaris_server_url: ${{ secrets.POLARIS_SERVERURL }}
+          polaris_access_token: ${{ secrets.POLARIS_ACCESSTOKEN }}
           polaris_assessment_types: "SCA,SAST"
-
+          polaris_prComment_enabled: ${{ github.event_name == 'pull_request' && 'true' }}
+          polaris_prComment_severities: "Critical, High, Medium, Low, Informational"
+          github_token: ${{ secrets.GH_TOKEN }}
 
