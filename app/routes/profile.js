@@ -88,20 +88,20 @@ function ProfileHandler(db) {
             address,
             bankAcc,
             bankRouting,
-            (err, user) => {
+            // (err, user) => {
 
-                if (err) return next(err);
+            //     if (err) return next(err);
 
-                // WARN: Applying any sting specific methods here w/o checking type of inputs could lead to DoS by HPP
-                //firstName = firstName.trim();
-                user.updateSuccess = true;
-                user.userId = userId;
+            //     // WARN: Applying any sting specific methods here w/o checking type of inputs could lead to DoS by HPP
+            //     //firstName = firstName.trim();
+            //     user.updateSuccess = true;
+            //     user.userId = userId;
 
-                return res.render("profile", {
-                    ...user,
-                    environmentalScripts
-                });
-            }
+            //     return res.render("profile", {
+            //         ...user,
+            //         environmentalScripts
+            //     });
+            // }
         );
 
     };
